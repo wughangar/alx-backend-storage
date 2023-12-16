@@ -1,11 +1,7 @@
 -- script that lists all bands with glam rock
 -- and rank them by theur longevity
 
-SELECT band_name,
-(CASE 
-	WHEN formed = 0 OR formed IS NULL THEN NULL
-	ELSE IF(split = 0 OR split IS NULL, 2022 - formed, split - formed)
-END) AS lifespan
+SELECT band_name, (IFNULL(split, 2022) - formed) AS lifespan
 FROM metal_bands
-WHERE main_style = 'Glam rock'
+WHERE INSTR(style, 'Glam rock') > 0
 ORDER BY lifespan DESC;

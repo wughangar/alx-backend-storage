@@ -3,13 +3,7 @@ DELIMITER //
 CREATE FUNCTION SafrDiv(a INT, b INT)
 RETURN FLOAT DETERMINISTIC
 BEGIN
-	DECLARE result FLOAT DETERMINISTIC;
-	IF b <> 0 THEN
-		SET result = a/b;
-	ELSE
-		SET result = 0;
-	END IF;
-	RETURN result;
+	RETURN IF(b = 0, 0, a / NULLIF(b, 0));
 END //
 
 DELIMITER ;

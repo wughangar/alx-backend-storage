@@ -1,12 +1,12 @@
 -- script that creates a procedure CompueAverageScoreForUser
 
-DELIMITER //
+DELIMITER $$
 CREATE PROCEDURE ComputeAverageScoreForUser(
 	IN p_user_id INT
 )
 BEGIN
 	DECLARE avg_score DECIMAL(10, 2);
-	SELCT AVG(score) INOT avg_score
+	SELECT AVG(score) INTO avg_score
 	FROM corrections
 	WHERE user_id = p_user_id;
 
@@ -18,6 +18,6 @@ BEGIN
 		INSERT INTO user_scores (user_id, average_score)
 		VALUES (p_user_id, 0);
 	END IF;
-END //
+END$$
 
 DELIMITER ;

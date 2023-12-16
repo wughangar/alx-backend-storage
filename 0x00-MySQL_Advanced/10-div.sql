@@ -1,7 +1,7 @@
 -- script that creates a function SafeDiv that divides
 DELIMITER //
 CREATE FUNCTION SafrDiv(a INT, b INT)
-RETURN INT
+RETURN FLOAT DETERMINISTIC
 BEGIN
 	DECLARE result INT;
 	IF b <> 0 THEN

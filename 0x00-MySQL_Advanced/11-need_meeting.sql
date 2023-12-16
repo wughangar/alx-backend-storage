@@ -1,6 +1,6 @@
 -- script that creates a view
 
-CREATE VIEW AS need_meeting AS
+CREATE VIEW need_meeting AS
 SELECT name
 FFROM students
 WHERE score < 80

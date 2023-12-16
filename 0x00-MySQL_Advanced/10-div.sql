@@ -1,6 +1,6 @@
 -- script that creates a function SafeDiv that divides
 DELIMITER //
-CRATE FUNCTION SafrDiv(a INT, b INT)
+CREATE FUNCTION SafrDiv(a INT, b INT)
 RETURN INT
 BEGIN
 	DECLARE result INT;

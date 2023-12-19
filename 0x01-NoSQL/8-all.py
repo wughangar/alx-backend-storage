@@ -3,15 +3,14 @@
 8. List all documents in Python
 """
 import pymongo
-from pymongo import MongoClient
 
 
 def list_all(mongo_collection):
     """
-    function that lists all documents in a collection
+    function that lists all documents in mongo_collection
     """
-    docs = []
-    cursor = mongo_collection.find({})
-    for doc in cursor:
-        docs.append(document)
-    return docs
+    if mongo_collection.count_documents({}) != 0:
+        documents = list(mongo_collection.find())
+        return documents
+    else:
+        return []

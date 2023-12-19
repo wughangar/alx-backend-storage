@@ -1,0 +1,6 @@
+// scripts that adds a new attribute in the colletion school
+
+db.school.updateMany(
+{ name: "Holberton school" },
+{ $set: { address: "972 Mission street" } }
+)

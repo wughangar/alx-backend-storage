@@ -3,7 +3,7 @@
 0. Writing strings to Redis
 """
 import redis
-from typing import Union
+from typing import Union, Callable
 import uuid
 
 
